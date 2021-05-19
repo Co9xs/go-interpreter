@@ -73,6 +73,8 @@ func (p *Parser) parseLetStatement() *ast.LetStatement {
 	if !p.expectPeek(token.ASSIGN) {
 		return nil
 	}
+
+	// TODO: セミコロンまで読み飛ばしているので要修正
 	for !p.curTokenIs(token.SEMICOLON) {
 		p.nextToken()
 	}

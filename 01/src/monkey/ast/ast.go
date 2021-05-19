@@ -38,7 +38,7 @@ func (ls *LetStatement) statementNode() {}
 func (ls *LetStatement) TokenLiteral() string { return ls.Token.Literal }
 
 type ReturnStatement struct {
-	Token token.Tokne // 'return'トークン
+	Token token.Token // 'return'トークン
 	ReturnValue Expression
 }
 

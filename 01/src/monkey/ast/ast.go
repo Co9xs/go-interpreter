@@ -27,6 +27,7 @@ func (p *Program) TokenLiteral() string {
 		return ""
 	}
 }
+
 type LetStatement struct {
 	Token token.Token //token.LETトークン
 	Name *Identifier

@@ -1,3 +1,5 @@
+package ast
+
 import "monkey/token"
 
 type LetStatement struct {

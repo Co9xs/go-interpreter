@@ -250,7 +250,7 @@ func TestParsingInfixExpression(t *testing.T) {
 
 		stmt, ok := program.Statements[0].(*ast.ExpressionStatement)
 		if !ok {
-			t.Fatalf("program.Statements[0] is not ast.ExpressionStatement. got=%d\n", 1, program.Statements[0])
+			t.Fatalf("program.Statements[0] is not ast.ExpressionStatement. got=%d\n", program.Statements[0])
 		}
 
 		exp, ok := stmt.Expression.(*ast.InfixExpression)

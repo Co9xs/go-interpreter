@@ -335,7 +335,7 @@ func testInfixExpression(t *testing.T, exp ast.Expression, left interface{},
 func testLiteralExpression(
 	t *testing.T,
 	exp ast.Expression,
-	expected interface{}
+	expected interface{},
 ) bool {
 	switch v := expected.(type) {
 	case int:

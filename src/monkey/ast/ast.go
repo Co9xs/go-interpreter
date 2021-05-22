@@ -95,6 +95,22 @@ func (es *ExpressionStatement) String() string {
 	return ""
 }
 
+type BlockStatement struct {
+	Token token.Token // "{"トークン
+	Statements []Statement
+}
+
+func (bs *BlockStatement) statementNode() {}
+func (bs *BlockStatement) TokenLiteral() string { return bs.Token.Literal }
+func (bs *BlockStatement) String() string {
+	var out bytes.Buffer
+
+	for _, s := range bs.Statements {
+		out.WriteString(s.String())
+	}
+	return out.String()
+}
+
 type PrefixExpression struct {
 	Token token.Token // 前置トークン、例えば"!"
 	Operator string

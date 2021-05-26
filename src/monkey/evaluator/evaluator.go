@@ -28,6 +28,9 @@ func Eval(node ast.Node) object.Object {
 		left := Eval(node.Left)
 		right := Eval(node.Right)
 		return evalInfixExpression(node.Operator, left, right)
+	case *ast.ReturnStatement:
+		val := Eval(node.ReturnValue)
+		return &object.RerurnValue{Value: val}
 	case *ast.IntegerLiteral:
 		return &object.Integer{Value: node.Value}
 	case *ast.Boolean:

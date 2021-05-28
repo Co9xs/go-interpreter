@@ -1,6 +1,6 @@
 package object
 
-func newEnclosedEnvironment(outer *Environment) *Environment {
+func NewEnclosedEnvironment(outer *Environment) *Environment {
 	env := NewEnvironment()
 	env.outer = outer
 	return env
@@ -19,7 +19,7 @@ type Environment struct {
 func (e *Environment) Get(name string) (Object, bool) {
 	obj, ok := e.store[name]
 	if !ok && e.outer != nil {
-		obj, ok := o.outer.Get(name)
+		obj, ok = e.outer.Get(name)
 	}
 	return obj, ok
 }
